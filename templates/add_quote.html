@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add a Quote</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #f8f9fa;
+        padding-top: 40px;
+      }
+
+      .container {
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      label {
+        font-weight: bold;
+      }
+
+      textarea {
+        resize: vertical;
+      }
+
+      button[type="submit"] {
+        width: 100%;
+        background-color: #007bff;
+        border-color: #007bff;
+      }
+
+      button[type="submit"]:hover {
+        filter: brightness(90%);
+      }
+
+      .cancel-link {
+        display: block;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Add a Quote</h1>
+      <form action="/add" method="POST">
+        <div class="form-group">
+          <label for="text">Quote</label>
+          <textarea
+            class="form-control"
+            id="text"
+            name="text"
+            rows="5"
+            required
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <label for="author">Author</label>
+          <input
+            type="text"
+            class="form-control"
+            id="author"
+            name="author"
+            required
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <br />
+        <a href="/" class="cancel-link">Cancel</a>
+      </form>
+    </div>
+  </body>
+</html>

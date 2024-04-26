@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login Page</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #f8f9fa;
+        padding-top: 40px;
+      }
+
+      .container {
+        max-width: 400px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      form {
+        margin-bottom: 20px;
+      }
+
+      .cancel-btn {
+        width: 100%;
+        background-color: #dc3545;
+        border-color: #dc3545;
+      }
+
+      .login-btn {
+        width: 100%;
+        background-color: #007bff;
+        border-color: #007bff;
+      }
+
+      .login-btn:hover,
+      .cancel-btn:hover {
+        filter: brightness(90%);
+      }
+
+      .btn-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Please Login</h1>
+      <form action="/login" method="POST">
+        <div class="form-group">
+          <label for="user">User</label>
+          <input type="text" class="form-control" id="user" name="user" />
+        </div>
+        <div class="btn-container">
+          <button type="submit" class="btn btn-primary login-btn">Login</button>
+          <a href="/" class="btn btn-secondary cancel-btn">Cancel</a>
+        </div>
+      </form>
+      <a href="./register.html" class="btn btn-link"
+        >Not registered? Sign up now!</a
+      >
+    </div>
+  </body>
+</html>

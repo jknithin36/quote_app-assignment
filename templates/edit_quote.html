@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Edit Quote</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #f8f9fa;
+        padding-top: 40px;
+      }
+
+      .container {
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      label {
+        font-weight: bold;
+      }
+
+      textarea {
+        resize: vertical;
+      }
+
+      .btn-container {
+        display: flex;
+        justify-content: space-between;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Edit Quote</h1>
+      <form action="/edit" method="POST">
+        <input type="hidden" id="_id" name="_id" value="{{data["_id"]}}" />
+        <div class="form-group">
+          <label for="text">Quote</label>
+          <textarea class="form-control" id="text" name="text" rows="5">
+{{data["text"]}}</textarea
+          >
+        </div>
+        <div class="form-group">
+          <label for="author">Author</label>
+          <input type="text" class="form-control" id="author" name="author"
+          value="{{data["author"]}}">
+        </div>
+        <div class="btn-container">
+          <button type="submit" class="btn btn-primary">Update</button>
+          <a href="/" class="btn btn-secondary">Cancel</a>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

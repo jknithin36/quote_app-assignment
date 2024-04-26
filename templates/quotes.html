@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Quotes</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #f8f9fa;
+        padding-top: 40px;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #dee2e6;
+      }
+
+      td:last-child {
+        white-space: nowrap;
+      }
+
+      a {
+        color: #007bff;
+        text-decoration: none;
+        margin-left: 5px;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      hr {
+        margin-top: 40px;
+        margin-bottom: 20px;
+      }
+
+      .add-link {
+        display: block;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Quotes</h1>
+      <hr />
+      <table>
+        <thead>
+          <tr>
+            <th>Quote</th>
+            <th>Author</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in data %}
+          <tr>
+            <td>{{ item["text"] }}</td>
+            <td><em>-- {{ item["author"] }}</em></td>
+            <td>
+              [<a href="/edit/{{ item['_id'] }}">Edit</a>
+              <a href="/delete/{{ item['_id'] }}">Delete</a>]
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <hr />
+      <a href="/add" class="add-link">Add a new quote!</a>
+    </div>
+  </body>
+</html>
